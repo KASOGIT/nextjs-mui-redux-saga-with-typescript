@@ -1,0 +1,26 @@
+{
+  "name": "nextjs-mui-redux-saga-with-typescript",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "next",
+    "@material-ui/styles": "next",
+    "@zeit/next-typescript": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "devDependencies": {
+    "@babel/core": "latest",
+    "@types/next": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/styled-jsx": "latest",
+    "typescript": "latest"
+  }
+}
