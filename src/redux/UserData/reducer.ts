@@ -2,22 +2,27 @@ import produce from "immer";
 
 import { actionTypes } from "./actions";
 
-const loadDataSuccess = (draft, { data }) => {
+const initialState = {
+  placeholderData: null,
+  error: null
+};
+
+const successLoadData = (draft: any, { data }: any) => {
   draft.placeholderData = data;
 };
 
-const loadDataFailure = (draft, { error }) => {
+const failureLoadData = (draft: any, { error }: any) => {
   draft.error = error;
 };
 
-const reducer = (state = null, action) => {
+const reducer = (state = initialState, action: any) => {
   return produce(state, draft => {
     switch (action.type) {
       case actionTypes.LOAD_DATA_SUCCESS:
-        loadDataSuccess(draft, action.payload);
+        successLoadData(draft, action.payload);
         break;
       case actionTypes.LOAD_DATA_FAILURE:
-        loadDataFailure(draft, action.payload);
+        failureLoadData(draft, action.payload);
         break;
     }
   });

@@ -44,4 +44,11 @@ const Home: React.FC<Props> = ({
   );
 };
 
-export default connect(state => state)(Home);
+const mapStateToProps = (state: any) => ({
+  error: state.userData.error,
+  placeholderData: state.userData.placeholderData,
+  lastUpdate: state.clock.lastUpdate,
+  light: state.clock.light
+});
+
+export default connect(mapStateToProps)(Home);

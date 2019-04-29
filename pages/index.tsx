@@ -27,7 +27,7 @@ class Index extends React.Component<Props, {}> {
   }
 
   render() {
-    return <Home title="Index Page" linkTo="/other" NavigateTo="Other Page" />;
+    return <Home title="Index Page" linkTo="/about" NavigateTo="Other Page" />;
   }
 }
 

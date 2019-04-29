@@ -10,7 +10,7 @@ export function loadData() {
   };
 }
 
-export function loadDataSuccess(data) {
+export function loadDataSuccess(data: any) {
   return {
     type: actionTypes.LOAD_DATA_SUCCESS,
     payload: {
@@ -19,7 +19,7 @@ export function loadDataSuccess(data) {
   };
 }
 
-export function loadDataFailure(error) {
+export function loadDataFailure(error: any) {
   return {
     type: actionTypes.LOAD_DATA_FAILURE,
     payload: {

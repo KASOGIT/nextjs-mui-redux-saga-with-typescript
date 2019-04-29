@@ -9,7 +9,7 @@ export function startClock() {
   };
 }
 
-export function tickClock(isServer) {
+export function tickClock(isServer: boolean) {
   return {
     type: actionTypes.TICK_CLOCK,
     payload: {

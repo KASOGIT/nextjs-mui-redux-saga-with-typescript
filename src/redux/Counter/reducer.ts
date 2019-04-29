@@ -2,15 +2,19 @@ import produce from "immer";
 
 import { actionTypes } from "./actions";
 
-const countAddValue = (draft, value) => {
+const initialState = {
+  count: 0
+};
+
+const countAddValue = (draft: any, value: any) => {
   draft.count += value;
 };
 
-const resetCount = draft => {
+const resetCount = (draft: any) => {
   draft.count = 0;
 };
 
-const reducer = (state = null, action) => {
+const reducer = (state = initialState, action: any) => {
   return produce(state, draft => {
     switch (action.type) {
       case actionTypes.INCREMENT:
