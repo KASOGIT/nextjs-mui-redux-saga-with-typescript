@@ -6,16 +6,16 @@
     "@material-ui/core": "next",
     "@material-ui/styles": "next",
     "@zeit/next-typescript": "latest",
-    "axios": "^0.18.0",
-    "immer": "^3.1.1",
+    "axios": "latest",
+    "immer": "latest",
     "next": "latest",
-    "next-redux-saga": "4.0.0",
-    "next-redux-wrapper": "2.0.0",
+    "next-redux-saga": "latest",
+    "next-redux-wrapper": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-redux": "5.0.7",
-    "redux": "4.0.1",
-    "redux-saga": "1.0.1"
+    "react-redux": "latest",
+    "redux": "latest",
+    "redux-saga": "latest"
   },
   "scripts": {
     "dev": "next",
@@ -25,13 +25,13 @@
   "devDependencies": {
     "@babel/core": "latest",
     "@types/next": "latest",
-    "@types/next-redux-saga": "^3.0.1",
-    "@types/next-redux-wrapper": "^2.0.2",
+    "@types/next-redux-saga": "latest",
+    "@types/next-redux-wrapper": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "@types/react-redux": "^7.0.8",
+    "@types/react-redux": "latest",
     "@types/styled-jsx": "latest",
-    "redux-devtools-extension": "2.13.2",
+    "redux-devtools-extension": "latest",
     "typescript": "latest"
   }
 }
