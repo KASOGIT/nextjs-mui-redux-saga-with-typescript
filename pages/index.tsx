@@ -1,5 +1,5 @@
 import * as React from "react";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import { startClock, tickClock } from "../src/redux/Clock/actions";
 import { loadData } from "../src/redux/UserData/actions";
@@ -8,27 +8,27 @@ import Home from "../src/pages/home";
 interface Props {
   dispatch: any;
   ctx: any;
+  getInitialProps: any;
 }
 
-class Index extends React.Component<Props, {}> {
-  static async getInitialProps(props: Props) {
-    const { store, isServer } = props.ctx;
-    store.dispatch(tickClock(isServer));
+const Index: any = () => {
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+    dispatch(startClock());
+  });
 
-    if (!store.getState().placeholderData) {
-      store.dispatch(loadData());
-    }
+  return <Home title="Index Page" linkTo="/about" NavigateTo="Other Page" />;
+};
 
-    return { isServer };
+Index.getInitialProps = async (props: Props) => {
+  const { store, isServer } = props.ctx;
+  store.dispatch(tickClock(isServer));
+
+  if (!store.getState().placeholderData) {
+    store.dispatch(loadData());
   }
 
-  componentDidMount() {
-    this.props.dispatch(startClock());
-  }
+  return { isServer };
+};
 
-  render() {
-    return <Home title="Index Page" linkTo="/about" NavigateTo="Other Page" />;
-  }
-}
-
-export default connect()(Index);
+export default Index;
