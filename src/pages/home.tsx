@@ -1,6 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Counter from "./components/counter";
 import Clock from "./components/clock";
@@ -15,15 +15,16 @@ interface Props {
   title: string;
 }
 
-const Home: React.FC<Props> = ({
-  error,
-  lastUpdate,
-  light,
-  linkTo,
-  NavigateTo,
-  placeholderData,
-  title
-}) => {
+const Home: React.FC<Props> = ({ linkTo, NavigateTo, title }) => {
+  const { error, placeholderData, lastUpdate, light } = useSelector(
+    (state: any) => ({
+      error: state.userData.error,
+      placeholderData: state.userData.placeholderData,
+      lastUpdate: state.clock.lastUpdate,
+      light: state.clock.light
+    })
+  );
+
   return (
     <div>
       <h1>{title}</h1>
@@ -44,11 +45,4 @@ const Home: React.FC<Props> = ({
   );
 };
 
-const mapStateToProps = (state: any) => ({
-  error: state.userData.error,
-  placeholderData: state.userData.placeholderData,
-  lastUpdate: state.clock.lastUpdate,
-  light: state.clock.light
-});
-
-export default connect(mapStateToProps)(Home);
+export default Home;

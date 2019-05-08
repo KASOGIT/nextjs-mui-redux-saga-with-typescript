@@ -13,7 +13,7 @@
     "next-redux-wrapper": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-redux": "latest",
+    "react-redux": "next",
     "redux": "latest",
     "redux-saga": "latest"
   },
@@ -29,7 +29,7 @@
     "@types/next-redux-wrapper": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "@types/react-redux": "latest",
+    "@types/react-redux": "7.1.0-alpha.4",
     "@types/styled-jsx": "latest",
     "redux-devtools-extension": "latest",
     "typescript": "latest"
